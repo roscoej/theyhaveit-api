@@ -19,6 +19,7 @@
     "moment": "^2.24.0",
     "mongoose": "^5.9.5",
     "mongoose-pagination": "^1.0.0",
+    "serverless-http": "^2.3.2",
     "twilio": "^3.40.0",
     "validator": "^12.2.0"
   },
