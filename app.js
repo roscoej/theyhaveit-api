@@ -1,12 +1,16 @@
-'use strict'
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-const routes = require('./routes'); 
+const controllers = require('./controllers/')
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use('/api', routes);
+const scraper = require('./lib/scraper')
 
-module.exports = app;
+const app = express()
+
+app.use(cors())
+app.use(bodyParser.json())
+
+app.use(controllers)
+
+module.exports = app
