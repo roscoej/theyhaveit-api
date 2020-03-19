@@ -60,11 +60,14 @@ router.post('/signup', async(req, res) => {
 
     const twilio = new Twilio();
     const msg = isUpdated
-      ? "🚨 Your alert notifications for theyhaveit.co have been modified!"
+      ? "🚨 Your alert notifications for theyhaveit.co have been modified."
       : "🚨 You're now on the theyhaveit.co alert list! In-stock alerts will be sent to you as soon as we process them. To change your alert settings, reply to us here."
     await twilio.sendSms(number, msg);
-    res.sendStatus(200)
+    res.sendStatus(200).json({
+      isUpdated,
+    })
   } catch (e) {
+    console.error(e)
     res.sendStatus(500)
   }
 })
