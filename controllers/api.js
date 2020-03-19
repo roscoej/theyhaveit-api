@@ -63,7 +63,7 @@ router.post('/signup', async(req, res) => {
       ? "🚨 Your alert notifications for theyhaveit.co have been modified."
       : "🚨 You're now on the theyhaveit.co alert list! In-stock alerts will be sent to you as soon as we process them. To change your alert settings, reply to us here."
     await twilio.sendSms(number, msg);
-    res.sendStatus(200).json({
+    res.status(200).json({
       isUpdated,
     })
   } catch (e) {
