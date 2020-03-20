@@ -4,8 +4,6 @@ const bodyParser = require('body-parser')
 
 const controllers = require('./controllers/')
 
-const scraper = require('./lib/scraper')
-
 const app = express()
 
 app.use(cors())

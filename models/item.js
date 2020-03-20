@@ -3,15 +3,12 @@ const mongoose = require('mongoose')
 const itemSchema = new mongoose.Schema({
   name: String,
   availability: {
-    status: {
-      type: Boolean,
-      default: true
-    },
     stores: [
       {
         name: String,
         link: String,
-        image: String
+        image: String,
+        available: Boolean,
       }
     ]
   },
