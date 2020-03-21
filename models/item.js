@@ -13,7 +13,7 @@ const itemSchema = new mongoose.Schema({
     ]
   },
   numbers: [{
-    type: String,
+    type: mongoose.Schema.Types.Mixed,
     minlength: 10
   }]
 })
